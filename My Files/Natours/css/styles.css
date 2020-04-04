@@ -4,15 +4,18 @@
     Dark Green: #28b485 
 */
 
-* {
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
-  font-size: 10px;
+  font-size: 62.5%;
 }
+
 body {
   font-family: "Lato", sans-serif;
   /* font-size: 16px; */
@@ -21,6 +24,8 @@ body {
   color: #777;
   /* padding: 30px; */
   padding: 3rem;
+
+  box-sizing: border-box;
 }
 
 header {
@@ -47,7 +52,7 @@ header {
 
 .logo {
   height: 5vh;
-  animation: moveInButton 1.5s 1s ease-out backwards;
+  animation: moveInTop 1.5s 1s ease-out backwards;
 }
 
 .heading-text-box {
@@ -86,6 +91,68 @@ header {
   animation: moveInRight 1.5s 1s ease-out backwards;
 }
 
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* padding: 15px 40px; */
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  /* border-radius: 100px; */
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  /* border-radius: 100px; */
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  /* transform: translateY(-3px); */
+  transform: translateY(-0.3rem);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(2);
+  background-color: white;
+  opacity: 0;
+}
+
+.btn:active {
+  /* transform: translateY(-1px); */
+  transform: translateY(-0.1rem);
+  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: white;
+  color: gray;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn-animated {
+  animation: moveInBottom 1.5s 1s ease-out backwards;
+}
+
+/* --------------------------------------------------------- Animations to be used in the website --------------------------------------------------------- */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -122,7 +189,7 @@ header {
   }
 }
 
-@keyframes moveInButton {
+@keyframes moveInBottom {
   0% {
     opacity: 0;
     /* transform: translateY(50px); */
@@ -131,7 +198,7 @@ header {
 
   80% {
     /* transform: translateY(-10px); */
-    transform: translateY(-1rem);
+    transform: translateY(0.5rem);
   }
 
   100% {
@@ -140,62 +207,20 @@ header {
   }
 }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  /* padding: 15px 40px; */
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  /* border-radius: 100px; */
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    /* transform: translateY(50px); */
+    transform: translateY(-5rem);
+  }
 
-.btn:hover {
-  /* transform: translateY(-3px); */
-  transform: translateY(-0.3rem);
-  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  80% {
+    /* transform: translateY(-10px); */
+    transform: translateY(0.5rem);
+  }
 
-.btn:active {
-  /* transform: translateY(-1px); */
-  transform: translateY(-0.1rem);
-  /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: white;
-  color: gray;
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  /* border-radius: 100px; */
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn-white::after {
-  background-color: #fff;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(2);
-  background-color: white;
-  opacity: 0;
-}
-
-.btn-animated {
-  animation: moveInButton 1.5s 1s ease-out backwards;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
