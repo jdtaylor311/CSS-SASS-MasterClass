@@ -53,6 +53,14 @@
     }
   }
 
+  &--green {
+    background-color: $primary-color-dark;
+    color: $color-white;
+    &::after {
+      background-color: $primary-color-dark;
+    }
+  }
+
   &--animated {
     animation: moveInBottom 1.5s 1s ease-out backwards;
   }
