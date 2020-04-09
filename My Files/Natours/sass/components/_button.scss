@@ -60,10 +60,10 @@
   }
 
   &--green {
-    background-color: $primary-color-dark;
+    background-color: $primary-color;
     color: $color-white;
     &::after {
-      background-color: $primary-color-dark;
+      background-color: $primary-color;
     }
   }
 

@@ -235,10 +235,10 @@ body {
     background-color: #fff; }
 
 .btn--green {
-  background-color: #28b485;
+  background-color: #55c57a;
   color: #fff; }
   .btn--green::after {
-    background-color: #28b485; }
+    background-color: #55c57a; }
 
 .btn--animated {
   animation: moveInBottom 1.5s 1s ease-out backwards; }
@@ -546,16 +546,69 @@ body {
   top: 0;
   left: 0;
   z-index: 2000;
-  background-color: rgba(0, 0, 0, 0.85); }
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s; }
   .popup__content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    height: 50rem;
     width: 75%;
-    border-radius: 0.5rem; }
+    border-radius: 0.5rem;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s 0.3s; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__left {
+    width: 33.33333%;
+    display: table-cell; }
+  .popup__right {
+    width: 66.66667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+  .popup__text {
+    font-size: 1.4rem;
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid #999;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 4rem;
+    -webkit-column-rule: 1px solid #999;
+    -ms-column-count: 2;
+    -ms-column-gap: 4rem;
+    -ms-column-rule: 1px solid #999;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #999;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
+  .popup__close {
+    color: #777;
+    text-decoration: none;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    line-height: 1;
+    display: inline-block; }
+    .popup__close:hover {
+      color: #55c57a; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
 
 .navigation__checkbox {
   display: none; }
