@@ -6,9 +6,33 @@
   }
 }
 
-@mixin centerHorizontalVertical {
+@mixin absCenter {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0-600px: PHONE
+600-900: TABLET PORTRAIT
+900-1200: TABLET LANDSCAPE
+1200-1800: NORMAL STYLES
+1800+: BIG-DESKTOP
+
+*/
+@mixin respond-phone {
+  @media (max-width: 600px) {
+    @content;
+  }
+
+  @media (max-width: 900px) {
+  }
+
+  @media (max-width: 1200px) {
+  }
+
+  @media (max-width: 1800px) {
+  }
 }

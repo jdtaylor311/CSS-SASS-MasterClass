@@ -11,7 +11,7 @@
   transition: all 0.2s;
 
   &__content {
-    @include centerHorizontalVertical;
+    @include absCenter;
     background-color: $color-white;
     width: 75%;
     border-radius: 0.5rem;

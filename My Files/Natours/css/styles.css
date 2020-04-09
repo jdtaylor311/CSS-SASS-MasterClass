@@ -1,3 +1,11 @@
+/*
+0-600px: PHONE
+600-900: TABLET PORTRAIT
+900-1200: TABLET LANDSCAPE
+1200-1800: NORMAL STYLES
+1800+: BIG-DESKTOP
+
+*/
 *,
 *::after,
 *::before {
@@ -158,7 +166,7 @@ body {
 .u-margin-bottom-huge {
   margin-bottom: 10rem !important; }
 
-.u-margin-bottom-big {
+.u-margin-bottom-large {
   margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
@@ -173,7 +181,7 @@ body {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
-.u-margin-top-big {
+.u-margin-top-large {
   margin-top: 8rem !important; }
 
 .u-margin-top-medium {
@@ -746,7 +754,7 @@ body {
     animation: moveInTop 1.5s 1s ease-out backwards; }
   .header__text-box {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
