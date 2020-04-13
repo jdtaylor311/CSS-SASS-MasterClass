@@ -2,6 +2,7 @@
   &__group:not(:last-child) {
     margin-bottom: 2rem;
   }
+
   &__input {
     font-size: 1.5rem;
     font-family: inherit;
@@ -49,7 +50,7 @@
   }
 
   &__radio-group {
-    width: 47%;
+    width: 49%;
     display: inline-block;
   }
 
@@ -72,7 +73,7 @@
     display: inline-block;
     position: absolute;
     left: 0;
-    top: -0.5rem;
+    top: -0.4rem;
 
     &::after {
       content: "";
