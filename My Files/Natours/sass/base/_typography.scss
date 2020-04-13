@@ -5,7 +5,6 @@ body {
   line-height: 1.7;
   color: $color-gray-dark;
   /* padding: 30px; */
-  padding: 3rem;
 
   box-sizing: border-box;
 }
@@ -19,22 +18,31 @@ body {
 
   &--main {
     display: block;
-    /* font-size: 60px; */
     font-size: 6rem;
     font-weight: 400;
-    /* letter-spacing: 35px; */
     letter-spacing: 3.5rem;
     animation: moveInLeft 1.5s 1s ease-out backwards;
+    @include respond(tab-port) {
+      letter-spacing: 2rem;
+    }
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
 
   &--sub {
     display: block;
-    /* font-size: 20px; */
     font-size: 2rem;
     font-weight: 700;
-    /* letter-spacing: 17.4px; */
     letter-spacing: 1.74rem;
     animation: moveInRight 1.5s 1s ease-out backwards;
+    @include respond(tab-port) {
+      letter-spacing: 1rem;
+    }
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -53,6 +61,13 @@ body {
     $primary-color-light,
     $primary-color-dark
   );
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
