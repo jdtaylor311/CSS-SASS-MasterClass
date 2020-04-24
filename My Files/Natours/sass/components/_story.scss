@@ -22,13 +22,22 @@
 
   &__shape {
     position: relative;
-    width: 15rem;
-    height: 15rem;
+    overflow: hidden;
     float: left;
-    shape-outside: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
-
+    border-radius: 50%;
+    @supports (shape-outside: circle(50% at 50% 50%)) or
+      (-webkit-shape-outside: circle(50% at 50% 50%)) {
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+    }
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      border-radius: none;
+      width: 15rem;
+      height: 15rem;
+    }
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
     }
